@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "eng618",
-    "slug": "eng618",
+    "slug": "rn-eng618",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "45c7112d-5cb7-41cb-b24b-98bafb67c39f"
+      }
+    },
+    "owner": "eng618"
   }
 }
