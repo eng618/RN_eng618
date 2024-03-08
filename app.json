@@ -11,12 +11,11 @@
       "resizeMode": "contain",
       "backgroundColor": "#505050"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.garciaericn.rn.eng618"
+      "bundleIdentifier": "com.garciaericn.rn.eng618",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
