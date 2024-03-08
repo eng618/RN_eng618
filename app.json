@@ -33,6 +33,12 @@
         "projectId": "45c7112d-5cb7-41cb-b24b-98bafb67c39f"
       }
     },
-    "owner": "eng618"
+    "owner": "eng618",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/45c7112d-5cb7-41cb-b24b-98bafb67c39f"
+    }
   }
 }
