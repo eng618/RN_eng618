@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Go",
+    "data": [
+      {
+        "description": "This is a command line interface (cli), based on spf13/cobra. The primary purpose of it is to facilitate my normal workflow. There are commands to help me maintain my system dot files. As well has other useful commands to kill processes, and more to come.",
+        "title": "eng",
+        "url": "https://pkg.go.dev/github.com/eng618/eng"
+      },
+      {
+        "description": "This is a go package that was developed while learning go, to test various data algorithms for programming in Go.",
+        "title": "go-eng",
+        "url": "https://pkg.go.dev/github.com/eng618/go-eng"
+      }
+    ]
+  },
+  {
+    "title": "Web",
+    "data": [
+      {
+        "description": "This is my full portfolio that is built using Gatsby and React.",
+        "title": "Full Portfolio",
+        "url": "https://garciaericn.com"
+      }
+    ]
+  }
+]
