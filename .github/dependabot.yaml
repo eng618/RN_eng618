@@ -5,14 +5,14 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     reviewers:
-      - "eng618"
-  - package-ecosystem: "github-actions"
-    directory: "/"
+      - 'eng618'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     reviewers:
-      - "eng618"
+      - 'eng618'

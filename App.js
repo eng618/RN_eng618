@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text } from "react-native";
-import ProjectsList from "./components/ProjectsList/ProjectsList";
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import ProjectsList from './components/ProjectsList/ProjectsList';
 
 export default function App() {
   return (
@@ -8,9 +8,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Text style={[styles.hero]}>Eric Garcia</Text>
       <Text style={styles.text}>eng618</Text>
-      <Text style={styles.credo}>
-        This is my app. {"\n"}There are many like it, but this one is mine.
-      </Text>
+      <Text style={styles.credo}>This is my app. {'\n'}There are many like it, but this one is mine.</Text>
       <ProjectsList />
     </SafeAreaView>
   );
@@ -31,23 +29,23 @@ export default function App() {
 
 const styles = StyleSheet.create({
   credo: {
-    color: "#F5F5F5",
-    fontWeight: "bold",
+    color: '#F5F5F5',
+    fontWeight: 'bold',
     padding: 16,
-    textAlign: "center",
+    textAlign: 'center',
   },
   hero: {
-    alignItems: "center",
-    color: "#9C8BFF",
+    alignItems: 'center',
+    color: '#9C8BFF',
     fontSize: 24,
   },
   text: {
-    color: "#9C8BFF",
+    color: '#9C8BFF',
   },
   window: {
-    alignItems: "center",
-    backgroundColor: "#505050",
+    alignItems: 'center',
+    backgroundColor: '#505050',
     flex: 1,
-    justifyContent: "top",
+    justifyContent: 'top',
   },
 });

@@ -1,5 +1,5 @@
-import { SectionList, StyleSheet, Text, Linking, View } from "react-native";
-import Data from "./data.json";
+import { SectionList, StyleSheet, Text, Linking, View } from 'react-native';
+import Data from './data.json';
 
 const ProjectsList = () => {
   return (
@@ -8,9 +8,7 @@ const ProjectsList = () => {
         style={styles.container}
         sections={Data}
         keyExtractor={(item, index) => item + index}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
+        renderSectionHeader={({ section: { title } }) => <Text style={styles.header}>{title}</Text>}
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Text style={styles.title}>{item.title}</Text>
@@ -33,25 +31,25 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   description: {
-    color: "#F5F5F5",
+    color: '#F5F5F5',
   },
   header: {
-    backgroundColor: "black",
-    color: "#9C8BFF",
+    backgroundColor: 'black',
+    color: '#9C8BFF',
     fontSize: 32,
     padding: 16,
   },
   item: {
-    backgroundColor: "#333333",
+    backgroundColor: '#333333',
     marginVertical: 8,
     padding: 16,
   },
   title: {
-    color: "#F5F5F5",
+    color: '#F5F5F5',
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   url: {
-    color: "#FFA38B",
+    color: '#FFA38B',
   },
 });
