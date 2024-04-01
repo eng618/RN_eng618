@@ -1705,9 +1705,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/cli@npm:0.17.7":
-  version: 0.17.7
-  resolution: "@expo/cli@npm:0.17.7"
+"@expo/cli@npm:0.17.8":
+  version: 0.17.8
+  resolution: "@expo/cli@npm:0.17.8"
   dependencies:
     "@babel/runtime": "npm:^7.20.0"
     "@expo/code-signing-certificates": "npm:0.0.5"
@@ -1787,7 +1787,7 @@ __metadata:
     ws: "npm:^8.12.1"
   bin:
     expo-internal: build/bin/cli
-  checksum: 10c0/8ea9103a574db1486834f9d1d38272ac173f7bd62f7086458a025507a17395a95e973aa346cb4d1c5f30372c2e98ea2605e55c7c1fba7bc1575fbaab1a47d4f6
+  checksum: 10c0/2f5acb9c7ee31e51c278deba81f0ec99d7fb3d82cda454da3ee60f2eca9725da2562f757e83f2c5eb39620dfbdf88b2fdcefd78b26a38a46591a90dd77fe9da1
   languageName: node
   linkType: hard
 
@@ -4257,7 +4257,7 @@ __metadata:
     "@babel/core": "npm:^7.24.0"
     "@eng618/prettier-config": "npm:^2.1.0"
     "@expo/metro-runtime": "npm:~3.1.3"
-    expo: "npm:~50.0.12"
+    expo: "npm:~50.0.14"
     expo-status-bar: "npm:~1.11.1"
     expo-updates: "npm:~0.24.11"
     husky: "npm:>=6"
@@ -4569,12 +4569,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-modules-core@npm:1.11.11":
-  version: 1.11.11
-  resolution: "expo-modules-core@npm:1.11.11"
+"expo-modules-core@npm:1.11.12":
+  version: 1.11.12
+  resolution: "expo-modules-core@npm:1.11.12"
   dependencies:
     invariant: "npm:^2.2.4"
-  checksum: 10c0/2b0124bdbff7aaa3810c2a37eb94e57f56a5f82a814bc45d254cbefa2d6e23a4f8f77295a47bdd7886202c5097e74e5242fe357822f3b24b0eaed09a95833ccf
+  checksum: 10c0/7c2a37f9856a476252b904f3e71b90cb1a555ffd6947428d2d855e4340d46743b59dd4074e4bb89634661f237f47022f10cc64b1508aa8b312c5c1ecdea47599
   languageName: node
   linkType: hard
 
@@ -4624,12 +4624,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:~50.0.12":
-  version: 50.0.12
-  resolution: "expo@npm:50.0.12"
+"expo@npm:~50.0.14":
+  version: 50.0.14
+  resolution: "expo@npm:50.0.14"
   dependencies:
     "@babel/runtime": "npm:^7.20.0"
-    "@expo/cli": "npm:0.17.7"
+    "@expo/cli": "npm:0.17.8"
     "@expo/config": "npm:8.5.4"
     "@expo/config-plugins": "npm:7.8.4"
     "@expo/metro-config": "npm:0.17.6"
@@ -4640,12 +4640,12 @@ __metadata:
     expo-font: "npm:~11.10.3"
     expo-keep-awake: "npm:~12.8.2"
     expo-modules-autolinking: "npm:1.10.3"
-    expo-modules-core: "npm:1.11.11"
+    expo-modules-core: "npm:1.11.12"
     fbemitter: "npm:^3.0.0"
     whatwg-url-without-unicode: "npm:8.0.0-3"
   bin:
     expo: bin/cli
-  checksum: 10c0/731fe0ef2571b3741b9442e0cc0dc7e9d2ca6996408e63dc96e3bc93c02a6fb07d1977d06a977fccdc6434da83ab6bce5b5533a136e8a769f54fe56257b9a041
+  checksum: 10c0/26820a28aaec3a3f5aba1372e5bec6b08c7885e6d2c027a49253adb8123be7331017cf4cda0e5228c9d44701c73a6dccae02d6e11fd6df7f46b552f40a33aa03
   languageName: node
   linkType: hard
 
