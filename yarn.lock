@@ -4259,7 +4259,7 @@ __metadata:
     "@expo/metro-runtime": "npm:~3.1.3"
     expo: "npm:~50.0.12"
     expo-status-bar: "npm:~1.11.1"
-    expo-updates: "npm:~0.24.11"
+    expo-updates: "npm:~0.24.12"
     husky: "npm:>=6"
     lint-staged: "npm:>=10"
     prettier: "npm:3.2.5"
@@ -4601,9 +4601,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-updates@npm:~0.24.11":
-  version: 0.24.11
-  resolution: "expo-updates@npm:0.24.11"
+"expo-updates@npm:~0.24.12":
+  version: 0.24.12
+  resolution: "expo-updates@npm:0.24.12"
   dependencies:
     "@expo/code-signing-certificates": "npm:0.0.5"
     "@expo/config": "npm:~8.5.0"
@@ -4620,7 +4620,7 @@ __metadata:
     expo: "*"
   bin:
     expo-updates: bin/cli.js
-  checksum: 10c0/8f68908752d2906d55eaf4d991995a8b2cf3956a3491d5a39dc9c68beea2b3849bea775bf9065ff585c8cfa85914022d6d65f7d1c04bcdf6bfd2953f6da64e68
+  checksum: 10c0/7bca8638a95ff8908aeeab687aced3776c7e1330d404fca4289110fd4923362bc2124d9e11f6d9d6f449f12fb0fdb6b0ec1ed129754d626e945c39bee8a91cbc
   languageName: node
   linkType: hard
 
