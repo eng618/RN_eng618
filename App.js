@@ -1,51 +1,45 @@
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
-import ProjectsList from './components/ProjectsList/ProjectsList';
+import React from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import HomeScreen from './components/screens/home-screen';
+import { default as customTheme } from './custom-theme.json';
+/**
+ * ThemeContext is used to get the current set theme, and toggle method for the application.
+ */
+export const ThemeContext = React.createContext({
+  theme: 'dark',
+  toggleTheme: () => {},
+});
 
 export default function App() {
+  const [theme, setTheme] = React.useState('dark');
+
+  const toggleTheme = () => {
+    // Eventually we will want to also add support for using the device theme.
+    // See: https://reactnative.dev/docs/appearance
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+  };
+
   return (
-    <SafeAreaView style={styles.window}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <StatusBar style="auto" />
-      <Text style={[styles.hero]}>Eric Garcia</Text>
-      <Text style={styles.text}>eng618</Text>
-      <Text style={styles.credo}>This is my app. {'\n'}There are many like it, but this one is mine.</Text>
-      <ProjectsList />
-    </SafeAreaView>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={{ ...eva[theme], ...customTheme }}>
+        <SafeAreaView style={styles.container}>
+          <HomeScreen style={styles.home} />
+        </SafeAreaView>
+      </ApplicationProvider>
+    </ThemeContext.Provider>
   );
 }
 
-// App colors
-// Background Color (#505050)
-// Accent Color (#9C8BFF)
-// Lighter Accent Color (#BDAEFF)
-// Darker Accent Color (#695DD6)
-// Complementary Color (#FFA38B)
-
-// Text color options
-// White (#FFFFFF) - For main body text on dark backgrounds, this will provide strong contrast and readability.
-// Light Grey (#CCCCCC) - For secondary text or labels, this color can provide a softer contrast with the background while still maintaining readability.
-// Off-White (#F5F5F5) - Another option for body text on dark backgrounds, offering a slightly warmer tone compared to pure white.
-// Dark Grey (#333333) - For text on lighter backgrounds or as an alternative to pure black for better readability and contrast.
-
 const styles = StyleSheet.create({
-  credo: {
-    color: '#F5F5F5',
-    fontWeight: 'bold',
-    padding: 16,
-    textAlign: 'center',
-  },
-  hero: {
-    alignItems: 'center',
-    color: '#9C8BFF',
-    fontSize: 24,
-  },
-  text: {
-    color: '#9C8BFF',
-  },
-  window: {
-    alignItems: 'center',
+  container: {
     backgroundColor: '#505050',
     flex: 1,
-    justifyContent: 'top',
   },
 });

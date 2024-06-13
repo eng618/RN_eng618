@@ -1,55 +1,56 @@
-import { SectionList, StyleSheet, Text, Linking, View } from 'react-native';
+import { Button, Card, Layout, Text } from '@ui-kitten/components';
+import { Linking, SectionList, StyleSheet } from 'react-native';
 import Data from './data.json';
 
 const ProjectsList = () => {
   return (
-    <>
+    <Layout level="2">
       <SectionList
         style={styles.container}
         sections={Data}
         keyExtractor={(item, index) => item + index}
-        renderSectionHeader={({ section: { title } }) => <Text style={styles.header}>{title}</Text>}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-            <Text style={styles.url} onPress={() => Linking.openURL(item.url)}>
-              {item.url}
+        renderSectionHeader={({ section: { title } }) => (
+          <Layout style={styles.header}>
+            <Text category="h1" status="primary">
+              {title}
             </Text>
-          </View>
+          </Layout>
+        )}
+        renderItem={({ item }) => (
+          <Card
+            status="primary"
+            header={<Text category="h4">{item.title}</Text>}
+            footer={
+              <Button onPress={() => Linking.openURL(item.url)} status="primary">
+                <Text>{item.title}</Text>
+              </Button>
+            }
+            style={styles.card}
+          >
+            <Text category="p1">{item.description}</Text>
+          </Card>
         )}
       />
-    </>
+    </Layout>
   );
 };
 
 export default ProjectsList;
 
 const styles = StyleSheet.create({
+  flexOne: {
+    flex: 1,
+  },
+  card: {
+    marginTop: 10,
+  },
   container: {
     padding: 16,
     paddingTop: 0,
   },
-  description: {
-    color: '#F5F5F5',
-  },
   header: {
     backgroundColor: 'black',
-    color: '#9C8BFF',
-    fontSize: 32,
     padding: 16,
-  },
-  item: {
-    backgroundColor: '#333333',
-    marginVertical: 8,
-    padding: 16,
-  },
-  title: {
-    color: '#F5F5F5',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  url: {
-    color: '#FFA38B',
+    borderRadius: 10,
   },
 });

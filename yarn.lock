@@ -1914,6 +1914,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eva-design/dss@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@eva-design/dss@npm:2.2.0"
+  checksum: 10c0/22ffc50d684751fec24ec80424de6b2f19fc37c4666950940854520ddee79dd91b29ae64c4d74c8305d199108b78c026e336a12dc1c5334df4b249e7b126bc0f
+  languageName: node
+  linkType: hard
+
+"@eva-design/eva@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@eva-design/eva@npm:2.2.0"
+  checksum: 10c0/7c212abdd066f254b670a4ad6f1f840ab46525506c120087937ab27685733d347067d0ebea21413fc41822ed7ef00a64f191150c5515113fe7f1b864808343bf
+  languageName: node
+  linkType: hard
+
+"@eva-design/processor@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@eva-design/processor@npm:2.2.0"
+  checksum: 10c0/423b98b49db894e0f5962c24dcbdaacfa3abbca536ed529b10a1c3494574b0e2833dbe3f0d528d61846cc9e010570b5802943aaab430f07dae36ff666231adb4
+  languageName: node
+  linkType: hard
+
 "@expo/bunyan@npm:^4.0.0":
   version: 4.0.0
   resolution: "@expo/bunyan@npm:4.0.0"
@@ -3098,6 +3119,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ui-kitten/components@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "@ui-kitten/components@npm:5.3.1"
+  dependencies:
+    "@eva-design/dss": "npm:^2.2.0"
+    "@eva-design/processor": "npm:^2.2.0"
+    fecha: "npm:3.0.3"
+    hoist-non-react-statics: "npm:^3.2.1"
+    lodash.merge: "npm:^4.6.1"
+  peerDependencies:
+    react-native-svg: "*"
+  checksum: 10c0/75aa765b265bf3b5d8e73da3e156956bd01c323634bb0a595abb8e1db1ad626638f67b744a05de4ec920988e60c2cf170a94d1e55489a127bfe31e3122f020fb
+  languageName: node
+  linkType: hard
+
+"@ui-kitten/eva-icons@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "@ui-kitten/eva-icons@npm:5.3.1"
+  dependencies:
+    react-native-eva-icons: "npm:^1.3.1"
+  peerDependencies:
+    "@ui-kitten/components": 5.3.1
+    react-native-svg: "*"
+  checksum: 10c0/87a9de3cc5d54c1ca0d1f879c55dbf6bced23c2a316a26cd25c2e366bd22035dd1e20c098c5f12974ff98a138e3eba31929701d073bc9ac7aa4ff1d8ebaa4d16
+  languageName: node
+  linkType: hard
+
 "@urql/core@npm:2.3.6":
   version: 2.3.6
   resolution: "@urql/core@npm:2.3.6"
@@ -3577,6 +3625,13 @@ __metadata:
   version: 2.19.0
   resolution: "blueimp-md5@npm:2.19.0"
   checksum: 10c0/85d04343537dd99a288c62450341dcce7380d3454c81f8e5a971ddd80307d6f9ef51b5b92ad7d48aaaa92fd6d3a1f6b2f4fada068faae646887f7bfabc17a346
+  languageName: node
+  linkType: hard
+
+"boolbase@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "boolbase@npm:1.0.0"
+  checksum: 10c0/e4b53deb4f2b85c52be0e21a273f2045c7b6a6ea002b0e139c744cb6f95e9ec044439a52883b0d74dedd1ff3da55ed140cfdddfed7fb0cccbed373de5dce1bcf
   languageName: node
   linkType: hard
 
@@ -4230,6 +4285,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-select@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "css-select@npm:5.1.0"
+  dependencies:
+    boolbase: "npm:^1.0.0"
+    css-what: "npm:^6.1.0"
+    domhandler: "npm:^5.0.2"
+    domutils: "npm:^3.0.1"
+    nth-check: "npm:^2.0.1"
+  checksum: 10c0/551c60dba5b54054741032c1793b5734f6ba45e23ae9e82761a3c0ed1acbb8cfedfa443aaba3a3c1a54cac12b456d2012a09d2cd5f0e82e430454c1b9d84d500
+  languageName: node
+  linkType: hard
+
+"css-tree@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "css-tree@npm:1.1.3"
+  dependencies:
+    mdn-data: "npm:2.0.14"
+    source-map: "npm:^0.6.1"
+  checksum: 10c0/499a507bfa39b8b2128f49736882c0dd636b0cd3370f2c69f4558ec86d269113286b7df469afc955de6a68b0dba00bc533e40022a73698081d600072d5d83c1c
+  languageName: node
+  linkType: hard
+
+"css-what@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "css-what@npm:6.1.0"
+  checksum: 10c0/a09f5a6b14ba8dcf57ae9a59474722e80f20406c53a61e9aedb0eedc693b135113ffe2983f4efc4b5065ae639442e9ae88df24941ef159c218b231011d733746
+  languageName: node
+  linkType: hard
+
 "dag-map@npm:~1.0.0":
   version: 1.0.2
   resolution: "dag-map@npm:1.0.2"
@@ -4394,6 +4479,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-serializer@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "dom-serializer@npm:2.0.0"
+  dependencies:
+    domelementtype: "npm:^2.3.0"
+    domhandler: "npm:^5.0.2"
+    entities: "npm:^4.2.0"
+  checksum: 10c0/d5ae2b7110ca3746b3643d3ef60ef823f5f078667baf530cec096433f1627ec4b6fa8c072f09d079d7cda915fd2c7bc1b7b935681e9b09e591e1e15f4040b8e2
+  languageName: node
+  linkType: hard
+
+"domelementtype@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "domelementtype@npm:2.3.0"
+  checksum: 10c0/686f5a9ef0fff078c1412c05db73a0dce096190036f33e400a07e2a4518e9f56b1e324f5c576a0a747ef0e75b5d985c040b0d51945ce780c0dd3c625a18cd8c9
+  languageName: node
+  linkType: hard
+
+"domhandler@npm:^5.0.2, domhandler@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "domhandler@npm:5.0.3"
+  dependencies:
+    domelementtype: "npm:^2.3.0"
+  checksum: 10c0/bba1e5932b3e196ad6862286d76adc89a0dbf0c773e5ced1eb01f9af930c50093a084eff14b8de5ea60b895c56a04d5de8bbc4930c5543d029091916770b2d2a
+  languageName: node
+  linkType: hard
+
+"domutils@npm:^3.0.1":
+  version: 3.1.0
+  resolution: "domutils@npm:3.1.0"
+  dependencies:
+    dom-serializer: "npm:^2.0.0"
+    domelementtype: "npm:^2.3.0"
+    domhandler: "npm:^5.0.3"
+  checksum: 10c0/342d64cf4d07b8a0573fb51e0a6312a88fb520c7fefd751870bf72fa5fc0f2e0cb9a3958a573610b1d608c6e2a69b8e9b4b40f0bfb8f87a71bce4f180cca1887
+  languageName: node
+  linkType: hard
+
 "dotenv-expand@npm:~10.0.0":
   version: 10.0.0
   resolution: "dotenv-expand@npm:10.0.0"
@@ -4481,7 +4604,10 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.24.6"
     "@eng618/prettier-config": "npm:^2.1.0"
+    "@eva-design/eva": "npm:^2.2.0"
     "@expo/metro-runtime": "npm:~3.1.3"
+    "@ui-kitten/components": "npm:^5.3.1"
+    "@ui-kitten/eva-icons": "npm:^5.3.1"
     expo: "npm:~50.0.12"
     expo-status-bar: "npm:~1.11.1"
     expo-updates: "npm:~0.24.11"
@@ -4491,9 +4617,18 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     react-native: "npm:0.73.6"
+    react-native-safe-area-context: "npm:^4.10.4"
+    react-native-svg: "npm:^15.3.0"
     react-native-web: "npm:~0.19.10"
   languageName: unknown
   linkType: soft
+
+"entities@npm:^4.2.0":
+  version: 4.5.0
+  resolution: "entities@npm:4.5.0"
+  checksum: 10c0/5b039739f7621f5d1ad996715e53d964035f75ad3b9a4d38c6b3804bb226e282ffeae2443624d8fdd9c47d8e926ae9ac009c54671243f0c3294c26af7cc85250
+  languageName: node
+  linkType: hard
 
 "env-editor@npm:^0.4.1":
   version: 0.4.2
@@ -4961,6 +5096,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fecha@npm:3.0.3":
+  version: 3.0.3
+  resolution: "fecha@npm:3.0.3"
+  checksum: 10c0/62c9f69f905788ff767c4784faabaf106d87e81670b3ab519d1d36af4fb32b7fe7882f2980e8d70de08e176c79b17231d5c1d9051908fa006723a5f9e9e41ca1
+  languageName: node
+  linkType: hard
+
 "fetch-retry@npm:^4.1.1":
   version: 4.1.1
   resolution: "fetch-retry@npm:4.1.1"
@@ -5420,6 +5562,15 @@ __metadata:
   dependencies:
     source-map: "npm:^0.7.3"
   checksum: 10c0/d772faa712f97ec009cb8de1f6b2dc26af491d1baaea92af7649fbb9cafd60a9c7a499de32d23ba7606e501147bfb2daf14e477c967f11e3de8a1e41ecf626c7
+  languageName: node
+  linkType: hard
+
+"hoist-non-react-statics@npm:^3.2.1":
+  version: 3.3.2
+  resolution: "hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    react-is: "npm:^16.7.0"
+  checksum: 10c0/fe0889169e845d738b59b64badf5e55fa3cf20454f9203d1eb088df322d49d4318df774828e789898dcb280e8a5521bb59b3203385662ca5e9218a6ca5820e74
   languageName: node
   linkType: hard
 
@@ -6379,6 +6530,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.merge@npm:^4.6.1":
+  version: 4.6.2
+  resolution: "lodash.merge@npm:4.6.2"
+  checksum: 10c0/402fa16a1edd7538de5b5903a90228aa48eb5533986ba7fa26606a49db2572bf414ff73a2c9f5d5fd36b31c46a5d5c7e1527749c07cbcf965ccff5fbdf32c506
+  languageName: node
+  linkType: hard
+
 "lodash.throttle@npm:^4.1.1":
   version: 4.1.1
   resolution: "lodash.throttle@npm:4.1.1"
@@ -6556,6 +6714,13 @@ __metadata:
   version: 1.0.0
   resolution: "md5hex@npm:1.0.0"
   checksum: 10c0/cad2569cdbc61c9de1ff2724c7344c695d868579bb21a1ab4cedf3ea5e91fa75d74a861da071ea1ee00a161511104985c30cb08d797bfd7d99f0f8fd14994728
+  languageName: node
+  linkType: hard
+
+"mdn-data@npm:2.0.14":
+  version: 2.0.14
+  resolution: "mdn-data@npm:2.0.14"
+  checksum: 10c0/67241f8708c1e665a061d2b042d2d243366e93e5bf1f917693007f6d55111588b952dcbfd3ea9c2d0969fb754aad81b30fdcfdcc24546495fc3b24336b28d4bd
   languageName: node
   linkType: hard
 
@@ -7246,6 +7411,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nth-check@npm:^2.0.1":
+  version: 2.1.1
+  resolution: "nth-check@npm:2.1.1"
+  dependencies:
+    boolbase: "npm:^1.0.0"
+  checksum: 10c0/5fee7ff309727763689cfad844d979aedd2204a817fbaaf0e1603794a7c20db28548d7b024692f953557df6ce4a0ee4ae46cd8ebd9b36cfb300b9226b567c479
+  languageName: node
+  linkType: hard
+
 "nullthrows@npm:^1.1.1":
   version: 1.1.1
   resolution: "nullthrows@npm:1.1.1"
@@ -7880,7 +8054,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.1":
+"react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 10c0/33977da7a5f1a287936a0c85639fec6ca74f4f15ef1e59a6bc20338fc73dc69555381e211f7a3529b8150a1f71e4225525b41b60b52965bda53ce7d47377ada1
@@ -7891,6 +8065,39 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 10c0/2bdb6b93fbb1820b024b496042cce405c57e2f85e777c9aabd55f9b26d145408f9f74f5934676ffdc46f3dcff656d78413a6e43968e7b3f92eea35b3052e9053
+  languageName: node
+  linkType: hard
+
+"react-native-eva-icons@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "react-native-eva-icons@npm:1.3.1"
+  peerDependencies:
+    react: 16.5.0
+    react-native-svg: ^9.4.0
+  checksum: 10c0/f91983bb18ad615c4e7cfce1eaed5917ac00ecd13db4f72b4c9f755df5ea86084664c02b338c6f7ea6d361d87ad13cfbaff36f5dd30ce74dddfb0bb22a2bfa38
+  languageName: node
+  linkType: hard
+
+"react-native-safe-area-context@npm:^4.10.4":
+  version: 4.10.4
+  resolution: "react-native-safe-area-context@npm:4.10.4"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/7b94f6151fa1e0a483d6939d4a51c5c7f2d50afd5e4baaa755253d2dff4ac3b6d613741997d66c935e7ff0b39aff8d14ea479b2cf83fe606d10676eb213b9998
+  languageName: node
+  linkType: hard
+
+"react-native-svg@npm:^15.3.0":
+  version: 15.3.0
+  resolution: "react-native-svg@npm:15.3.0"
+  dependencies:
+    css-select: "npm:^5.1.0"
+    css-tree: "npm:^1.1.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/72ac639de834d943c3a52f1ac1703e0858eefe59f32d8db4c7e4736e117afea8b88efe8eef9fd1051367d601076090e733fcb93e70df0ec8c6ff6df4859874af
   languageName: node
   linkType: hard
 
@@ -8648,7 +8855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.6.0, source-map@npm:~0.6.1":
+"source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.1":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 10c0/ab55398007c5e5532957cb0beee2368529618ac0ab372d789806f5718123cc4367d57de3904b4e6a4170eb5a0b0f41373066d02ca0735a0c4d75c7d328d3e011
