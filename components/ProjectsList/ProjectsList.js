@@ -10,7 +10,7 @@ const ProjectsList = () => {
         sections={Data}
         keyExtractor={(item, index) => item + index}
         renderSectionHeader={({ section: { title } }) => (
-          <Layout style={styles.header}>
+          <Layout style={styles.header} level="4">
             <Text category="h1" status="primary">
               {title}
             </Text>
@@ -21,9 +21,11 @@ const ProjectsList = () => {
             status="primary"
             header={<Text category="h4">{item.title}</Text>}
             footer={
-              <Button onPress={() => Linking.openURL(item.url)} status="primary">
-                <Text>{item.title}</Text>
-              </Button>
+              <Layout>
+                <Button onPress={() => Linking.openURL(item.url)} status="primary">
+                  {item.title}
+                </Button>
+              </Layout>
             }
             style={styles.card}
           >
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
   },
   header: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     padding: 16,
     borderRadius: 10,
   },

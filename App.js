@@ -2,20 +2,14 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { useState } from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import HomeScreen from './components/screens/home-screen';
 import { default as customTheme } from './custom-theme.json';
-/**
- * ThemeContext is used to get the current set theme, and toggle method for the application.
- */
-export const ThemeContext = React.createContext({
-  theme: 'dark',
-  toggleTheme: () => {},
-});
+import { ThemeContext } from './utils/ThemeProvider';
 
 export default function App() {
-  const [theme, setTheme] = React.useState('dark');
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     // Eventually we will want to also add support for using the device theme.
