@@ -4110,7 +4110,7 @@ __metadata:
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     react-native: "npm:0.74.2"
-    react-native-safe-area-context: "npm:^4.10.4"
+    react-native-safe-area-context: "npm:^4.10.7"
     react-native-svg: "npm:^15.3.0"
     react-native-web: "npm:~0.19.12"
   languageName: unknown
@@ -7518,13 +7518,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-safe-area-context@npm:^4.10.4":
-  version: 4.10.4
-  resolution: "react-native-safe-area-context@npm:4.10.4"
+"react-native-safe-area-context@npm:^4.10.7":
+  version: 4.10.7
+  resolution: "react-native-safe-area-context@npm:4.10.7"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10c0/7b94f6151fa1e0a483d6939d4a51c5c7f2d50afd5e4baaa755253d2dff4ac3b6d613741997d66c935e7ff0b39aff8d14ea479b2cf83fe606d10676eb213b9998
+  checksum: 10c0/de54c9d3e67b0283ebbf7c04009dfeb9be766fe3eed6c9c236288b72773a31b5cc609887cef1b14dc81975fa9c1d47e87daf8c25d9a296343489e5286d1c4b20
   languageName: node
   linkType: hard
 
