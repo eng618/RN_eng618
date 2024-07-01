@@ -1716,9 +1716,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/fingerprint@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@expo/fingerprint@npm:0.8.0"
+"@expo/fingerprint@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "@expo/fingerprint@npm:0.10.0"
   dependencies:
     "@expo/spawn-async": "npm:^1.7.2"
     chalk: "npm:^4.1.2"
@@ -1730,7 +1730,7 @@ __metadata:
     semver: "npm:^7.6.0"
   bin:
     fingerprint: bin/cli.js
-  checksum: 10c0/9f08feea39f8ad2ab631d651a87dcc6a779addbe9e2e14cdd13cbca0ef6056f9a4c30857c87874a3ac0d5afcd67699f5238edd81e00eb34cd76372f9c3cd5978
+  checksum: 10c0/2d87631bd5dfc5dbf663937837c88d5143df4abf6818a5d8ad7797ef2d637d31db09d58b67d8b6b555865900ff603b218865dd6de7789d9a8e18a8d28589f7b3
   languageName: node
   linkType: hard
 
@@ -4103,7 +4103,7 @@ __metadata:
     "@ui-kitten/eva-icons": "npm:^5.3.1"
     expo: "npm:~51.0.14"
     expo-status-bar: "npm:~1.12.1"
-    expo-updates: "npm:~0.25.17"
+    expo-updates: "npm:~0.25.18"
     husky: "npm:^9.0.11"
     lint-staged: "npm:^15.2.7"
     prettier: "npm:3.3.2"
@@ -4437,14 +4437,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-updates@npm:~0.25.17":
-  version: 0.25.17
-  resolution: "expo-updates@npm:0.25.17"
+"expo-updates@npm:~0.25.18":
+  version: 0.25.18
+  resolution: "expo-updates@npm:0.25.18"
   dependencies:
     "@expo/code-signing-certificates": "npm:0.0.5"
     "@expo/config": "npm:~9.0.0-beta.0"
     "@expo/config-plugins": "npm:~8.0.0-beta.0"
-    "@expo/fingerprint": "npm:^0.8.0"
+    "@expo/fingerprint": "npm:^0.10.0"
     "@expo/spawn-async": "npm:^1.7.2"
     arg: "npm:4.1.0"
     chalk: "npm:^4.1.2"
@@ -4460,7 +4460,7 @@ __metadata:
     expo: "*"
   bin:
     expo-updates: bin/cli.js
-  checksum: 10c0/84b6f4ce10fa3d420182c215bf8fa8362021041ba58cb433e2f83d8ccff2d1c02ebdad7661675303af686c4ddc0a566279ca4d67795af851ea1ce7d69889c834
+  checksum: 10c0/281d58780d5cdb0514a3af3891258d097a0a28f9090e6417980540d9c5a71aa01e30e62b3d9cf1055865380f759ed6c698c753a9dca395926213bc590e3c06c1
   languageName: node
   linkType: hard
 
