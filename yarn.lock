@@ -1637,6 +1637,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo/config-plugins@npm:~8.0.8":
+  version: 8.0.8
+  resolution: "@expo/config-plugins@npm:8.0.8"
+  dependencies:
+    "@expo/config-types": "npm:^51.0.0-unreleased"
+    "@expo/json-file": "npm:~8.3.0"
+    "@expo/plist": "npm:^0.1.0"
+    "@expo/sdk-runtime-versions": "npm:^1.0.0"
+    chalk: "npm:^4.1.2"
+    debug: "npm:^4.3.1"
+    find-up: "npm:~5.0.0"
+    getenv: "npm:^1.0.0"
+    glob: "npm:7.1.6"
+    resolve-from: "npm:^5.0.0"
+    semver: "npm:^7.5.4"
+    slash: "npm:^3.0.0"
+    slugify: "npm:^1.6.6"
+    xcode: "npm:^3.0.1"
+    xml2js: "npm:0.6.0"
+  checksum: 10c0/4d403ce9df0cd694cd30f1a914c4e4529c529e9b5f572ddc3cdf88f80d4c47a8ba8336da78ae3f9c67966a7fa1e02d87ea2dff95102a0a337004d118ebc32d63
+  languageName: node
+  linkType: hard
+
 "@expo/config-types@npm:^51.0.0-unreleased":
   version: 51.0.1
   resolution: "@expo/config-types@npm:51.0.1"
@@ -1716,9 +1739,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/fingerprint@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@expo/fingerprint@npm:0.8.0"
+"@expo/fingerprint@npm:^0.10.2":
+  version: 0.10.3
+  resolution: "@expo/fingerprint@npm:0.10.3"
   dependencies:
     "@expo/spawn-async": "npm:^1.7.2"
     chalk: "npm:^4.1.2"
@@ -1730,7 +1753,7 @@ __metadata:
     semver: "npm:^7.6.0"
   bin:
     fingerprint: bin/cli.js
-  checksum: 10c0/9f08feea39f8ad2ab631d651a87dcc6a779addbe9e2e14cdd13cbca0ef6056f9a4c30857c87874a3ac0d5afcd67699f5238edd81e00eb34cd76372f9c3cd5978
+  checksum: 10c0/0245e1156e9b152cfcaa22910b1340d588feef4816f0c917a851bc6c45d3c0c69d4ca4f6be7d4276b536d3c7ac70ddd45375d036aaa7d4817d1a2eccccda19cc
   languageName: node
   linkType: hard
 
@@ -4103,7 +4126,7 @@ __metadata:
     "@ui-kitten/eva-icons": "npm:^5.3.1"
     expo: "npm:~51.0.14"
     expo-status-bar: "npm:~1.12.1"
-    expo-updates: "npm:~0.25.17"
+    expo-updates: "npm:~0.25.24"
     husky: "npm:^9.0.11"
     lint-staged: "npm:^15.2.7"
     prettier: "npm:3.3.2"
@@ -4437,14 +4460,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-updates@npm:~0.25.17":
-  version: 0.25.17
-  resolution: "expo-updates@npm:0.25.17"
+"expo-updates@npm:~0.25.24":
+  version: 0.25.24
+  resolution: "expo-updates@npm:0.25.24"
   dependencies:
     "@expo/code-signing-certificates": "npm:0.0.5"
     "@expo/config": "npm:~9.0.0-beta.0"
-    "@expo/config-plugins": "npm:~8.0.0-beta.0"
-    "@expo/fingerprint": "npm:^0.8.0"
+    "@expo/config-plugins": "npm:~8.0.8"
+    "@expo/fingerprint": "npm:^0.10.2"
     "@expo/spawn-async": "npm:^1.7.2"
     arg: "npm:4.1.0"
     chalk: "npm:^4.1.2"
@@ -4460,7 +4483,7 @@ __metadata:
     expo: "*"
   bin:
     expo-updates: bin/cli.js
-  checksum: 10c0/84b6f4ce10fa3d420182c215bf8fa8362021041ba58cb433e2f83d8ccff2d1c02ebdad7661675303af686c4ddc0a566279ca4d67795af851ea1ce7d69889c834
+  checksum: 10c0/d8d7e53bb07e85c4450df219edb9664a2e3082e09eab6a15d6f722f53d44c71131c6774912b2dfaa471823419d2512e4fc549bb8d4ea5eed70640930f50ba3cc
   languageName: node
   linkType: hard
 
