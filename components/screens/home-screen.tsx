@@ -1,12 +1,9 @@
-import { Button, Layout, Text } from '@ui-kitten/components';
+import { Button, Divider, Layout, Text } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ThemeContext } from '../../utils/ThemeProvider';
 import ProjectsList from '../ProjectsList/ProjectsList';
 
-const HomeScreen = () => {
-  const themeContext = React.useContext(ThemeContext);
-
+const HomeScreen = ({ navigation }) => {
   return (
     <Layout level="1" style={styles.flexOne}>
       <View style={styles.hero}>
@@ -20,8 +17,9 @@ const HomeScreen = () => {
           This is my app. There are many like it, but this one is mine.
         </Text>
       </View>
-      <Button style={{ margin: 20 }} onPress={themeContext.toggleTheme}>
-        Toggle Theme
+      <Divider />
+      <Button style={{ margin: 20 }} onPress={() => navigation.navigate('Settings')}>
+        Go to Settings
       </Button>
       <Layout level="2" style={styles.flexOne}>
         <ProjectsList status={{}} />

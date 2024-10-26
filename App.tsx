@@ -1,12 +1,16 @@
 import * as eva from '@eva-design/eva';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import HomeScreen from './components/screens/home-screen';
+import SettingsScreen from './components/screens/settings/settings-screen';
 import { default as customTheme } from './custom-theme.json';
 import { ThemeContext } from './utils/ThemeProvider';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [theme, setTheme] = useState('dark');
@@ -20,12 +24,14 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <StatusBar style="auto" />
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva[theme], ...customTheme }}>
-        <SafeAreaView style={styles.container}>
-          <HomeScreen style={styles.home} />
-        </SafeAreaView>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
+            <Stack.Screen name="Settings" component={SettingsScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ApplicationProvider>
     </ThemeContext.Provider>
   );

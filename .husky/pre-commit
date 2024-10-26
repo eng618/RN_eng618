@@ -1,1 +1,4 @@
-yarn dlx lint-staged
+#!/bin/sh
+
+yarn pretty-quick --staged
+yarn lint-staged
