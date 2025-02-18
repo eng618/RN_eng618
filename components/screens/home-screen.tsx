@@ -1,9 +1,15 @@
-import { Button, Divider, Layout, Text } from '@ui-kitten/components';
+import { Divider, Layout, Text } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ProjectsList from '../ProjectsList/ProjectsList';
 
-const HomeScreen = ({ navigation }) => {
+import { NavigationProp } from '@react-navigation/native';
+
+interface HomeScreenProps {
+  navigation: NavigationProp<any>;
+}
+
+const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
     <Layout level="1" style={styles.flexOne}>
       <View style={styles.hero}>
@@ -18,11 +24,8 @@ const HomeScreen = ({ navigation }) => {
         </Text>
       </View>
       <Divider />
-      <Button style={{ margin: 20 }} onPress={() => navigation.navigate('Settings')}>
-        Go to Settings
-      </Button>
       <Layout level="2" style={styles.flexOne}>
-        <ProjectsList status={{}} />
+        <ProjectsList />
       </Layout>
     </Layout>
   );

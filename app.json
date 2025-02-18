@@ -1,43 +1,46 @@
 {
   "expo": {
-    "name": "eng618",
-    "slug": "rn-eng618",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#505050"
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.garciaericn.rn.eng618",
-      "buildNumber": "1.0.0"
-    },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#505050"
+        "backgroundColor": "#505050",
+        "foregroundImage": "./assets/adaptive-icon.png"
       },
+      "newArchEnabled": true,
       "package": "com.garciaericn.rn.eng618"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "assetBundlePatterns": ["**/*"],
+    "entryPoint": "./App.tsx",
     "extra": {
       "eas": {
         "projectId": "45c7112d-5cb7-41cb-b24b-98bafb67c39f"
       }
     },
+    "icon": "./assets/icon.png",
+    "ios": {
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.garciaericn.rn.eng618",
+      "newArchEnabled": true,
+      "supportsTablet": true
+    },
+    "name": "eng618",
+    "orientation": "portrait",
     "owner": "eng618",
     "runtimeVersion": {
       "policy": "appVersion"
     },
+    "slug": "rn-eng618",
+    "splash": {
+      "backgroundColor": "#505050",
+      "image": "./assets/splash.png",
+      "resizeMode": "contain"
+    },
     "updates": {
       "url": "https://u.expo.dev/45c7112d-5cb7-41cb-b24b-98bafb67c39f"
+    },
+    "userInterfaceStyle": "light",
+    "version": "1.0.0",
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
   }
 }

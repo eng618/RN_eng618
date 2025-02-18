@@ -1,10 +1,10 @@
 import * as eva from '@eva-design/eva';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry, Icon, IconElement, useTheme, Layout } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import HomeScreen from './components/screens/home-screen';
 import SettingsScreen from './components/screens/settings/settings-screen';
 import { default as customTheme } from './custom-theme.json';
@@ -12,12 +12,58 @@ import { ThemeContext } from './utils/ThemeProvider';
 
 const Stack = createNativeStackNavigator();
 
+const MenuIcon = (): IconElement => {
+  const theme = useTheme();
+  return <Icon name="menu-outline" style={{ width: 24, height: 24 }} fill={theme['text-basic-color']} />;
+};
+
+const BackIcon = (): IconElement => {
+  const theme = useTheme();
+  return <Icon name="arrow-back" style={{ width: 24, height: 24 }} fill={theme['text-basic-color']} />;
+};
+
+const NavigatorContent = () => {
+  const theme = useTheme();
+
+  return (
+    <Stack.Navigator
+      screenOptions={({ route, navigation }) => ({
+        headerStyle: {
+          backgroundColor: theme['background-basic-color-1'],
+        },
+        headerTintColor: theme['text-basic-color'],
+        headerLeft: () => {
+          if (route.name === 'Home') {
+            return (
+              <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ marginRight: 10 }}>
+                <MenuIcon />
+              </TouchableOpacity>
+            );
+          }
+          return (
+            <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginRight: 10 }}>
+              <BackIcon />
+            </TouchableOpacity>
+          );
+        },
+      })}
+    >
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Overview',
+        }}
+      />
+      <Stack.Screen name="Settings" component={SettingsScreen} />
+    </Stack.Navigator>
+  );
+};
+
 export default function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   const toggleTheme = () => {
-    // Eventually we will want to also add support for using the device theme.
-    // See: https://reactnative.dev/docs/appearance
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
   };
@@ -26,12 +72,11 @@ export default function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva[theme], ...customTheme }}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
-            <Stack.Screen name="Settings" component={SettingsScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Layout style={styles.container}>
+          <NavigationContainer>
+            <NavigatorContent />
+          </NavigationContainer>
+        </Layout>
       </ApplicationProvider>
     </ThemeContext.Provider>
   );
@@ -39,7 +84,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#505050',
     flex: 1,
   },
 });
