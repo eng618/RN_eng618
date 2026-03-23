@@ -1,16 +1,12 @@
-import { Button, Layout } from '@ui-kitten/components';
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { ThemeContext } from '../../../utils/ThemeProvider';
+import { StyleSheet, View } from 'react-native';
 import AppearanceCard from './cards/appearance-card';
 
-const SettingsScreen = ({ navigation }) => {
-  const themeContext = React.useContext(ThemeContext);
-
+const SettingsScreen = () => {
   return (
-    <Layout style={styles.container}>
+    <View style={styles.container}>
       <AppearanceCard />
-    </Layout>
+    </View>
   );
 };
 

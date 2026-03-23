@@ -1,91 +1,82 @@
-import { DrawerContentComponentProps, createDrawerNavigator } from '@react-navigation/drawer';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { Icon, IconElement, Layout, Text, useTheme } from '@ui-kitten/components';
-import { StyleSheet } from 'react-native';
+import { Text } from '@gv-tech/ui-native';
+import {
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+  DrawerItem,
+  createDrawerNavigator,
+} from '@react-navigation/drawer';
+import { Home, Settings } from 'lucide-react-native';
+import { useContext } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { ThemeContext } from '../../utils/ThemeProvider';
 import HomeScreen from '../screens/home-screen';
 import SettingsScreen from '../screens/settings/settings-screen';
 
 const Drawer = createDrawerNavigator();
 
-interface IconProps {
-  color: string;
-}
-
-const HomeIcon = ({ color }: IconProps): IconElement => <Icon name="home-outline" style={styles.icon} fill={color} />;
-
-const SettingsIcon = ({ color }: IconProps): IconElement => (
-  <Icon name="settings-2-outline" style={styles.icon} fill={color} />
-);
-
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
-  const theme = useTheme();
+  const { theme } = useContext(ThemeContext);
   const { navigation, state } = props;
+  const bg = theme === 'dark' ? '#000' : '#fff';
+  const textColor = theme === 'dark' ? '#fff' : '#000';
 
   return (
-    <DrawerContentScrollView {...props}>
-      <Layout style={styles.drawerHeader} level="1">
-        <Text category="h6" status="primary">
+    <DrawerContentScrollView {...props} style={{ backgroundColor: bg }}>
+      <View style={styles.drawerHeader}>
+        <Text variant="h6" className="text-primary">
           Eric Garcia
         </Text>
-        <Text category="s2" appearance="hint">
+        <Text variant="bodySmall" className="text-muted">
           eng618
         </Text>
-      </Layout>
+      </View>
       <DrawerItem
         label="Overview"
-        icon={({ color }) => <HomeIcon color={color} />}
+        icon={({ color }) => <Home color={color} size={24} />}
         focused={state.index === 0}
         onPress={() => navigation.navigate('Home')}
-        activeBackgroundColor={theme['background-basic-color-2']}
-        activeTintColor={theme['text-primary-color']}
-        inactiveTintColor={theme['text-basic-color']}
+        activeBackgroundColor={theme === 'dark' ? '#111' : '#f3f4f6'}
+        activeTintColor={textColor}
+        inactiveTintColor={textColor}
       />
       <DrawerItem
         label="Settings"
-        icon={({ color }) => <SettingsIcon color={color} />}
+        icon={({ color }) => <Settings color={color} size={24} />}
         focused={state.index === 1}
         onPress={() => navigation.navigate('Settings')}
-        activeBackgroundColor={theme['background-basic-color-2']}
-        activeTintColor={theme['text-primary-color']}
-        inactiveTintColor={theme['text-basic-color']}
+        activeBackgroundColor={theme === 'dark' ? '#111' : '#f3f4f6'}
+        activeTintColor={textColor}
+        inactiveTintColor={textColor}
       />
     </DrawerContentScrollView>
   );
 };
 
 export const DrawerNavigator = () => {
-  const theme = useTheme();
+  const { theme } = useContext(ThemeContext);
+  const bg = theme === 'dark' ? '#000' : '#fff';
+  const textColor = theme === 'dark' ? '#fff' : '#000';
 
   return (
     <Drawer.Navigator
       drawerContent={(props: DrawerContentComponentProps) => <CustomDrawerContent {...props} />}
       screenOptions={{
         headerStyle: {
-          backgroundColor: theme['background-basic-color-1'],
+          backgroundColor: bg,
         },
-        headerTintColor: theme['text-basic-color'],
+        headerTintColor: textColor,
         drawerStyle: {
-          backgroundColor: theme['background-basic-color-1'],
+          backgroundColor: bg,
         },
       }}
     >
-      <Drawer.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: 'Overview',
-        }}
-      />
+      <Drawer.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
-  icon: {
-    width: 24,
-    height: 24,
-  },
   drawerHeader: {
     padding: 16,
     borderBottomWidth: 1,

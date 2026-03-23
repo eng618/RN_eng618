@@ -1,60 +1,63 @@
-import * as eva from '@eva-design/eva';
+// Ensure Reanimated runtime globals exist before any imports that may use Reanimated
+// (This is needed when the Babel plugin is not correctly applied or when bundler ordering changes.)
+(function () {
+  const g = typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : undefined;
+  if (g && !g.__reanimatedLoggerConfig) {
+    g.__reanimatedLoggerConfig = {};
+  }
+})();
+
+import 'react-native-gesture-handler';
+import 'react-native-reanimated';
+
+import { ThemeProvider } from '@gv-tech/ui-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ApplicationProvider, IconRegistry, Icon, IconElement, useTheme, Layout } from '@ui-kitten/components';
-import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import { useState } from 'react';
+import { ArrowLeft, Menu } from 'lucide-react-native';
+import { useContext, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import HomeScreen from './components/screens/home-screen';
 import SettingsScreen from './components/screens/settings/settings-screen';
-import { default as customTheme } from './custom-theme.json';
 import { ThemeContext } from './utils/ThemeProvider';
 
 const Stack = createNativeStackNavigator();
 
-const MenuIcon = (): IconElement => {
-  const theme = useTheme();
-  return <Icon name="menu-outline" style={{ width: 24, height: 24 }} fill={theme['text-basic-color']} />;
-};
-
-const BackIcon = (): IconElement => {
-  const theme = useTheme();
-  return <Icon name="arrow-back" style={{ width: 24, height: 24 }} fill={theme['text-basic-color']} />;
-};
+const IconButton = ({ onPress, children }: { onPress: () => void; children: React.ReactNode }) => (
+  <TouchableOpacity onPress={onPress} style={styles.iconButton}>
+    {children}
+  </TouchableOpacity>
+);
 
 const NavigatorContent = () => {
-  const theme = useTheme();
+  const { theme } = useContext(ThemeContext);
+  const iconColor = theme === 'dark' ? '#fff' : '#000';
 
   return (
     <Stack.Navigator
       screenOptions={({ route, navigation }) => ({
         headerStyle: {
-          backgroundColor: theme['background-basic-color-1'],
+          backgroundColor: theme === 'dark' ? '#000' : '#fff',
         },
-        headerTintColor: theme['text-basic-color'],
+        headerTintColor: theme === 'dark' ? '#fff' : '#000',
         headerLeft: () => {
           if (route.name === 'Home') {
             return (
-              <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={{ marginRight: 10 }}>
-                <MenuIcon />
-              </TouchableOpacity>
+              <IconButton onPress={() => navigation.navigate('Settings')}>
+                <Menu color={iconColor} size={24} />
+              </IconButton>
             );
           }
+
           return (
-            <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginRight: 10 }}>
-              <BackIcon />
-            </TouchableOpacity>
+            <IconButton onPress={() => navigation.goBack()}>
+              <ArrowLeft color={iconColor} size={24} />
+            </IconButton>
           );
         },
       })}
     >
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: 'Overview',
-        }}
-      />
+      <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator>
   );
@@ -63,21 +66,19 @@ const NavigatorContent = () => {
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-  };
+  const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider {...eva} theme={{ ...eva[theme], ...customTheme }}>
-        <Layout style={styles.container}>
-          <NavigationContainer>
-            <NavigatorContent />
-          </NavigationContainer>
-        </Layout>
-      </ApplicationProvider>
+      <ThemeProvider>
+        <SafeAreaProvider>
+          <SafeAreaView style={[styles.container, theme === 'dark' ? styles.dark : styles.light]}>
+            <NavigationContainer>
+              <NavigatorContent />
+            </NavigationContainer>
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </ThemeProvider>
     </ThemeContext.Provider>
   );
 }
@@ -85,5 +86,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  dark: {
+    backgroundColor: '#000',
+  },
+  light: {
+    backgroundColor: '#fff',
+  },
+  iconButton: {
+    marginRight: 10,
+    padding: 6,
   },
 });

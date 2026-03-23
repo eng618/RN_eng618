@@ -1,4 +1,4 @@
-import { Divider, Layout, Text } from '@ui-kitten/components';
+import { Separator, Text } from '@gv-tech/ui-native';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ProjectsList from '../ProjectsList/ProjectsList';
@@ -11,28 +11,28 @@ interface HomeScreenProps {
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
-    <Layout level="1" style={styles.flexOne}>
+    <View style={styles.container}>
       <View style={styles.hero}>
-        <Text status="primary" category="h1">
+        <Text variant="h1" className="text-primary">
           Eric Garcia
         </Text>
-        <Text status="primary" category="s2">
+        <Text variant="bodySmall" className="text-primary">
           eng618
         </Text>
-        <Text style={styles.credo} category="s2">
+        <Text variant="body" style={styles.credo}>
           This is my app. There are many like it, but this one is mine.
         </Text>
       </View>
-      <Divider />
-      <Layout level="2" style={styles.flexOne}>
+      <Separator />
+      <View style={styles.content}>
         <ProjectsList />
-      </Layout>
-    </Layout>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  flexOne: {
+  container: {
     flex: 1,
   },
   credo: {
@@ -40,8 +40,10 @@ const styles = StyleSheet.create({
   },
   hero: {
     alignItems: 'center',
-    fontSize: 24,
     marginTop: 10,
+  },
+  content: {
+    flex: 1,
   },
 });
 
