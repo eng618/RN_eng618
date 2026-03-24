@@ -1,4 +1,4 @@
-import { Separator, Text } from '@gv-tech/ui-native';
+import { Button, Card, CardContent, CardHeader, CardTitle, Separator, Text } from '@gv-tech/ui-native';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ProjectsList from '../ProjectsList/ProjectsList';
@@ -23,6 +23,24 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           This is my app. There are many like it, but this one is mine.
         </Text>
       </View>
+
+      <Card style={styles.quickNavCard}>
+        <CardHeader>
+          <CardTitle>Quick access</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Button onPress={() => navigation.navigate('About')} style={styles.navButton}>
+            About
+          </Button>
+          <Button onPress={() => navigation.navigate('Posts')} style={styles.navButton}>
+            Posts
+          </Button>
+          <Button onPress={() => navigation.navigate('Settings')} style={styles.navButton}>
+            Settings
+          </Button>
+        </CardContent>
+      </Card>
+
       <Separator />
       <View style={styles.content}>
         <ProjectsList />
@@ -41,6 +59,12 @@ const styles = StyleSheet.create({
   hero: {
     alignItems: 'center',
     marginTop: 10,
+  },
+  quickNavCard: {
+    margin: 16,
+  },
+  navButton: {
+    marginBottom: 8,
   },
   content: {
     flex: 1,

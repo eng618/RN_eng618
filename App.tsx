@@ -1,12 +1,3 @@
-// Ensure Reanimated runtime globals exist before any imports that may use Reanimated
-// (This is needed when the Babel plugin is not correctly applied or when bundler ordering changes.)
-(function () {
-  const g = typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : undefined;
-  if (g && !g.__reanimatedLoggerConfig) {
-    g.__reanimatedLoggerConfig = {};
-  }
-})();
-
 import 'react-native-gesture-handler';
 import 'react-native-reanimated';
 
@@ -17,7 +8,9 @@ import { ArrowLeft, Menu } from 'lucide-react-native';
 import { useContext, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import AboutScreen from './components/screens/about-screen';
 import HomeScreen from './components/screens/home-screen';
+import PostsScreen from './components/screens/posts-screen';
 import SettingsScreen from './components/screens/settings/settings-screen';
 import { ThemeContext } from './utils/ThemeProvider';
 
@@ -58,6 +51,8 @@ const NavigatorContent = () => {
       })}
     >
       <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
+      <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="Posts" component={PostsScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator>
   );
