@@ -1,8 +1,8 @@
-version: '3'
+version: "3"
 
 tasks:
   upgrade:
     desc: Upgrade all dependencies using expo.
     cmds:
-      - yarn expo install expo@latest
-      - npx expo install --fix
+      - bun run expo install expo@latest
+      - bunx expo install --fix

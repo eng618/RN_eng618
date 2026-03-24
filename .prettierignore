@@ -7,3 +7,5 @@ dist
 .yarn
 .expo
 node_modules
+
+.codacy/codacy.yaml
